@@ -1,0 +1,223 @@
+@import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
+
+.page {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  padding: 45px;
+  margin-left: 200px;
+  flex-direction: column;
+}
+
+.header__logo {
+  max-width: 173px;
+}
+
+.header__line {
+  margin: auto;
+  border: 1px;
+  opacity: 0.7px;
+  margin-top: 40px;
+}
+
+.profile {
+  max-width: 880px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.profile__avatar {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  justify-content: center;
+}
+
+.profile__content {
+  display: flex;
+  align-items: center;
+}
+
+.profile__name {
+  color: #ffffff;
+  max-width: 373px;
+  font-family: Inter;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  margin: 0;
+}
+
+.profile__paragraph {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile__button {
+  color: #ffffff;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.profile__add-button {
+  color: #ffffff;
+  max-width: 150px;
+  max-height: 50px;
+  border-radius: 2px;
+  border: 2px;
+  margin: auto 0 auto auto;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup_show {
+  display: flex;
+}
+.form {
+  width: 430px;
+  height: 330px;
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}
+
+.form__title {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  color: #000000;
+  margin-left: 40px;
+}
+
+.form__input {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 0 40px;
+}
+
+.form__button {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 358px;
+  height: 50.15px;
+  border-radius: 2px;
+  margin: 80px 0 0 40px;
+}
+
+.form__close-button {
+  position: absolute;
+  color: #ffffff;
+  cursor: pointer;
+  top: -50px;
+  right: -50px;
+}
+
+.elements {
+  display: grid;
+  max-width: 880px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.element {
+  max-width: 282px;
+  max-height: 361px;
+}
+
+.element__photo {
+  max-width: 282px;
+  max-height: 282px;
+  margin: 0;
+}
+
+.element__photo-name {
+  color: #000000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  max-width: 246px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.element__info {
+  background-color: #ffffff;
+  max-width: 282px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0 0 10px 10px;
+  padding-top: 10px;
+  margin: 0;
+  align-items: center;
+}
+.element__photo-heart {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../images/corazon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  max-width: 880px;
+  margin: auto;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.footer__copyright {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #545454;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .elements {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
