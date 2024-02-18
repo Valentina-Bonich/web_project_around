@@ -1,0 +1,11 @@
+.element__photo-name {
+  color: #000000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  max-width: 246px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

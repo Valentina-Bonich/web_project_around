@@ -1,0 +1,9 @@
+.element__photo-heart {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../images/corazon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

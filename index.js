@@ -9,11 +9,11 @@ const btnSaveProfile = document.querySelector("#profile-form-button");
 const formProfile = document.querySelector("#form-profile");
 
 function handleOpenProfileForm() {
-  popUpProfile.classList.add("popup_show");
+  popUpProfile.classList.add("popup__show");
 }
 
 function handleCloseProfileForm() {
-  popUpProfile.classList.remove("popup_show");
+  popUpProfile.classList.remove("popup__show");
 }
 
 function handleProfileSubmit(evt) {
