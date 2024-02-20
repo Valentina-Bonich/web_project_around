@@ -24,6 +24,7 @@
 @import url(../blocks/form/form__input.css);
 @import url(../blocks/form/form__button.css);
 @import url(../blocks/form/form__close-button.css);
+@import url(../blocks/form/form__line.css);
 
 @import url(../blocks/elements/element.css);
 @import url(../blocks/elements/elements.css);
