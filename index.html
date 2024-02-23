@@ -89,79 +89,58 @@
         </form>
       </div>
 
-      <div class="elements">
-        <div class="element">
+      <div class="popup" id="popup-add-card">
+        <form class="form popup__form" id="form-addcard">
           <img
-            class="element__photo"
-            src="images/yosemite.png"
-            alt="valle con arboles en el río"
+            class="form__close-button"
+            src="images/Close-icon.png"
+            alt="boton para cerrar"
+            id="close-addcard-form"
           />
-          <div class="element__info">
-            <h2 class="element__photo-name">Yosemite Valley</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
-
-        <div class="element">
+          <h2 class="form__title">Nuevo Lugar</h2>
+          <input
+            class="form__input"
+            type="text"
+            id="input-title"
+            placeholder="Title"
+            required
+            minlength="2"
+            maxlength="20"
+          />
           <img
-            class="element__photo"
-            src="images/lake.png"
-            alt="paisaje del lago junto a montañas"
+            class="form__line"
+            src="images/Line-2.png"
+            alt="linea divisoria"
           />
-          <div class="element__info">
-            <h2 class="element__photo-name">Lake Louise</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
-
-        <div class="element">
+          <input
+            class="form__input"
+            type="text"
+            id="input-url"
+            placeholder="image URL"
+            required
+            minlength="2"
+            maxlength="20"
+          />
           <img
-            class="element__photo"
-            src="images/bald.png"
-            alt="paisaje del amanecer en las montañas"
+            class="form__line"
+            src="images/Line-2.png"
+            alt="linea divisoria"
           />
-          <div class="element__info">
-            <h2 class="element__photo-name">Bald Mountains</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            class="element__photo"
-            src="images/latemar.png"
-            alt="paisaje de un cielo estrellado en la noche"
-          />
-          <div class="element__info">
-            <h2 class="element__photo-name">Latemar</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            class="element__photo"
-            src="images/vanoise.png"
-            alt="paisaje en la orilla de un lago y montañas al fondo"
-          />
-          <div class="element__info">
-            <h2 class="element__photo-name">Vanoise National</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
-
-        <div class="element">
-          <img
-            class="element__photo"
-            src="images/lago.png"
-            alt="paisaje de una cabaña y sus botes de madera sobre el lago"
-          />
-          <div class="element__info">
-            <h2 class="element__photo-name">Lago di Braies</h2>
-            <button class="element__photo-heart"></button>
-          </div>
-        </div>
+          <button class="form__button" type="submit" id="addcard-form-button">
+            Crear
+          </button>
+        </form>
       </div>
+
+      <template class="template-card">
+        <div class="element">
+          <img class="element__photo" src="" alt="" />
+          <div class="element__info">
+            <h2 class="element__photo-name"></h2>
+            <button class="element__photo-heart"></button>
+          </div>
+        </div>
+      </template>
 
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
