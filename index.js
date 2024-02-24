@@ -15,6 +15,7 @@ const cardArea = document.querySelector(".elements");
 const formCard = document.querySelector("#form-addcard");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardLink = document.querySelector("#input-url");
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -80,11 +81,15 @@ function CardGenerator(title, link) {
   const cardImage = card.querySelector(".element__photo");
   const cardTitle = card.querySelector(".element__photo-name");
   const likeButton = card.querySelector(".element__photo-heart");
+  const btnRemoveCard = card.querySelector(".element__photo-trash");
 
   cardImage.src = link;
   cardTitle.textContent = title;
   likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle(".element__photo-heart_active");
+    likeButton.classList.toggle("element__photo-heart_active");
+  });
+  btnRemoveCard.addEventListener("click", function () {
+    card.remove();
   });
   return card;
 }

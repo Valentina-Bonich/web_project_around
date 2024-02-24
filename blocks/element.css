@@ -1,0 +1,51 @@
+.element {
+  width: 282px;
+  height: 361px;
+  background-color: white;
+}
+
+.element__info {
+  background-color: #ffffff;
+  max-width: 282px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0 0 10px 10px;
+  padding-top: 10px;
+  margin: 0;
+  align-items: center;
+}
+
+.element__photo-heart {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../images/corazon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.element__photo-heart_active {
+  background-image: url(../images/corazon-negro.png);
+}
+
+.element__photo-name {
+  color: #000000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  max-width: 246px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.element__photo-trash {
+  width: 18px;
+  height: 19px;
+}
+.element__photo {
+  width: 282px;
+  height: 282px;
+  margin: 0;
+}
