@@ -7,3 +7,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.element__photo-heart_active {
+  background-image: url(../images/corazon-negro.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

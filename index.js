@@ -11,7 +11,10 @@ const btnAddCard = document.querySelector(".profile__add-button");
 const popUpCard = document.querySelector("#popup-add-card");
 const btnCloseCard = document.querySelector("#close-addcard-form");
 const templateCard = document.querySelector(".template-card");
-
+const cardArea = document.querySelector(".elements");
+const formCard = document.querySelector("#form-addcard");
+const inputCardTitle = document.querySelector("#input-title");
+const inputCardLink = document.querySelector("#input-url");
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -64,17 +67,38 @@ function handleCloseCardForm() {
   popUpCard.classList.remove("popup_show");
 }
 
-function CardGenerator(title, url) {
-  const cardClone = templateCard.textContent.querySelector(".element");
-  const cardImage = cardClone.querySelector(".element__photo");
-  const cardTitle = cardClone.querySelector(".element__photo-name");
-  cardImage.src = link;
-  cardTitle.textContent = title;
+function handleCardSubmit(evt) {
+  evt.preventDefault();
+  const newCard = CardGenerator(inputCardTitle.value, inputCardLink.value);
+  cardArea.prepend(newCard);
+  handleCloseCardForm();
 }
 
+//generar cartas nuevas
+function CardGenerator(title, link) {
+  const card = templateCard.cloneNode(true).content.querySelector(".element");
+  const cardImage = card.querySelector(".element__photo");
+  const cardTitle = card.querySelector(".element__photo-name");
+  const likeButton = card.querySelector(".element__photo-heart");
+
+  cardImage.src = link;
+  cardTitle.textContent = title;
+  likeButton.addEventListener("click", function () {
+    likeButton.classList.toggle(".element__photo-heart_active");
+  });
+  return card;
+}
+
+//eventos
 btnProfile.addEventListener("click", handleOpenProfileForm);
 btnCloseProfile.addEventListener("click", handleCloseProfileForm);
 formProfile.addEventListener("submit", handleProfileSubmit);
 
 btnAddCard.addEventListener("click", handleOpenCardForm);
 btnCloseCard.addEventListener("click", handleCloseCardForm);
+formCard.addEventListener("submit", handleCardSubmit);
+
+initialCards.forEach(function (element) {
+  const newCard = CardGenerator(element.name, element.link);
+  cardArea.append(newCard);
+});
