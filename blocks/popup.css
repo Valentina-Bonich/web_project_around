@@ -7,8 +7,30 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
 }
 
 .popup_show {
   display: flex;
+}
+
+.popup__image-button {
+  position: absolute;
+  top: 30px;
+  right: 420px;
+  cursor: pointer;
+}
+
+.popup__picture {
+  width: 433px;
+  height: 540px;
+  margin-top: 80px;
+}
+.popup__picture-name {
+  color: white;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-right: 380px;
 }

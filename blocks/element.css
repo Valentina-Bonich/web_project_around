@@ -2,6 +2,7 @@
   width: 282px;
   height: 361px;
   background-color: white;
+  border-radius: 50px;
 }
 
 .element__info {
@@ -23,6 +24,7 @@
   background-image: url(../images/corazon.png);
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .element__photo-heart_active {
@@ -43,9 +45,20 @@
 .element__photo-trash {
   width: 18px;
   height: 19px;
+  background-image: url(../images/basurero.png);
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  margin-left: 250px;
+  margin-top: 20px;
 }
+
 .element__photo {
   width: 282px;
   height: 282px;
   margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
 }

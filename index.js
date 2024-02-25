@@ -15,6 +15,10 @@ const cardArea = document.querySelector(".elements");
 const formCard = document.querySelector("#form-addcard");
 const inputCardTitle = document.querySelector("#input-title");
 const inputCardLink = document.querySelector("#input-url");
+const popUpImage = document.querySelector("#popup-image");
+const btnCloseImage = document.querySelector("#close-image-button");
+const popUpTitle = document.querySelector(".popup__picture-name");
+const popUpPicture = document.querySelector(".popup__picture");
 
 const initialCards = [
   {
@@ -74,6 +78,16 @@ function handleCardSubmit(evt) {
   cardArea.prepend(newCard);
   handleCloseCardForm();
 }
+//abrir y cerrar imagen
+function handleOpenImage(title, link) {
+  popUpTitle.textContent = title;
+  popUpPicture.src = link;
+  popUpImage.classList.add("popup_show");
+}
+
+function handleCloseImage() {
+  popUpImage.classList.remove("popup_show");
+}
 
 //generar cartas nuevas
 function CardGenerator(title, link) {
@@ -91,6 +105,9 @@ function CardGenerator(title, link) {
   btnRemoveCard.addEventListener("click", function () {
     card.remove();
   });
+  cardImage.addEventListener("click", function () {
+    handleOpenImage(title, link);
+  });
   return card;
 }
 
@@ -102,6 +119,8 @@ formProfile.addEventListener("submit", handleProfileSubmit);
 btnAddCard.addEventListener("click", handleOpenCardForm);
 btnCloseCard.addEventListener("click", handleCloseCardForm);
 formCard.addEventListener("submit", handleCardSubmit);
+
+btnCloseImage.addEventListener("click", handleCloseImage);
 
 initialCards.forEach(function (element) {
   const newCard = CardGenerator(element.name, element.link);
