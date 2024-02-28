@@ -38,6 +38,9 @@
   border-bottom: 1px solid gray;
   width: 80%;
   gap: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .form__line {
   max-width: 358px;
