@@ -20,6 +20,9 @@ const btnCloseImage = document.querySelector("#close-image-button");
 const popUpTitle = document.querySelector(".popup__picture-name");
 const popUpPicture = document.querySelector(".popup__picture");
 
+inputProfileName.value = profileName.textContent;
+inputProfileAbout.value = profileParagraph.textContent;
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
