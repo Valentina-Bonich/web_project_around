@@ -19,6 +19,9 @@ const popUpImage = document.querySelector("#popup-image");
 const btnCloseImage = document.querySelector("#close-image-button");
 const popUpTitle = document.querySelector(".popup__picture-name");
 const popUpPicture = document.querySelector(".popup__picture");
+const overlayEdit = document.querySelector("#popup-overlay-edit");
+const overlayAdd = document.querySelector("#popup-overlay-add");
+const overlayImage = document.querySelector("popup-overlay-image");
 
 inputProfileName.value = profileName.textContent;
 inputProfileAbout.value = profileParagraph.textContent;
@@ -49,14 +52,32 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
 ];
+//fx superposición y esc
+function handleOverlayClick(event) {
+  if (event.target.classList.contains("popup")) {
+    handleCloseCardForm();
+    handleCloseProfileForm();
+    handleCloseImage();
+  }
+}
 
+function HandlerScapeClose(evt) {
+  if (evt.key === "Escape") {
+    handleCloseCardForm();
+    handleCloseProfileForm();
+    handleCloseImage();
+  }
+}
 //abrir y cerrar profile form
 function handleOpenProfileForm() {
   popUpProfile.classList.add("popup_show");
+  document.addEventListener("keydown", HandlerScapeClose);
+  popUpProfile.addEventListener("click", handleOverlayClick);
 }
 
 function handleCloseProfileForm() {
   popUpProfile.classList.remove("popup_show");
+  document.removeEventListener("keydown", HandlerScapeClose);
 }
 
 function handleProfileSubmit(evt) {

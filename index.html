@@ -47,7 +47,7 @@
       </div>
 
       <div class="popup" id="popup-profile">
-        <form class="form popup__form" id="form-profile">
+        <form class="form popup__form" id="form-profile" novalidate>
           <img
             class="form__close-button"
             src="images/Close-icon.png"
@@ -55,30 +55,40 @@
             id="close-profile-form"
           />
           <h2 class="form__title">Edit profile</h2>
+          <span class="form__error_visible input-name-error"
+            >Por favor, rellena este campo</span
+          >
           <input
-            class="form__input"
+            class="form__input form__input_type_error"
             type="text"
             id="input-name"
             required
             minlength="2"
-            maxlength="50"
+            maxlength="40"
           />
+          <span class="form__error_visible input-about-error"
+            >Por favor, rellena este campo</span
+          >
           <input
-            class="form__input"
+            class="form__input form__input_type_error"
             type="text"
             id="input-about"
             required
             minlength="2"
-            maxlength="50"
+            maxlength="200"
           />
-          <button class="form__button" type="submit" id="profile-form-button">
+          <button
+            class="form__button form__button_disabled"
+            type="submit"
+            id="profile-form-button"
+          >
             Save
           </button>
         </form>
       </div>
 
       <div class="popup" id="popup-add-card">
-        <form class="form popup__form" id="form-addcard">
+        <form class="form popup__form" id="form-addcard" novalidate>
           <img
             class="form__close-button"
             src="images/Close-icon.png"
@@ -86,35 +96,42 @@
             id="close-addcard-form"
           />
           <h2 class="form__title">Nuevo Lugar</h2>
+
           <input
-            class="form__input"
+            class="form__input form__input_type_error"
             type="text"
             id="input-title"
             placeholder="Title"
             required
             minlength="2"
-            maxlength="20"
+            maxlength="30"
           />
+
           <img
             class="form__line"
             src="images/Line-2.png"
             alt="linea divisoria"
           />
+          <span class="form__error_visible input-title-error"></span>
+
           <input
-            class="form__input"
+            class="form__input form__input_type_error"
             type="text"
             id="input-url"
             placeholder="image URL"
             required
-            minlength="2"
-            maxlength="100"
           />
           <img
             class="form__line"
             src="images/Line-2.png"
             alt="linea divisoria"
           />
-          <button class="form__button" type="submit" id="addcard-form-button">
+          <span class="form__error_visible input-url-error"></span>
+          <button
+            class="form__button form__button_disabled"
+            type="submit"
+            id="addcard-form-button"
+          >
             Crear
           </button>
         </form>
@@ -146,6 +163,7 @@
         <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
       </footer>
     </div>
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>
