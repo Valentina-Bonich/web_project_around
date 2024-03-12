@@ -19,9 +19,6 @@ const popUpImage = document.querySelector("#popup-image");
 const btnCloseImage = document.querySelector("#close-image-button");
 const popUpTitle = document.querySelector(".popup__picture-name");
 const popUpPicture = document.querySelector(".popup__picture");
-const overlayEdit = document.querySelector("#popup-overlay-edit");
-const overlayAdd = document.querySelector("#popup-overlay-add");
-const overlayImage = document.querySelector("popup-overlay-image");
 
 inputProfileName.value = profileName.textContent;
 inputProfileAbout.value = profileParagraph.textContent;
@@ -68,6 +65,7 @@ function HandlerScapeClose(evt) {
     handleCloseImage();
   }
 }
+
 //abrir y cerrar profile form
 function handleOpenProfileForm() {
   popUpProfile.classList.add("popup_show");
@@ -90,10 +88,13 @@ function handleProfileSubmit(evt) {
 //abrir y cerrar card form
 function handleOpenCardForm() {
   popUpCard.classList.add("popup_show");
+  document.addEventListener("keydown", HandlerScapeClose);
+  popUpCard.addEventListener("click", handleOverlayClick);
 }
 
 function handleCloseCardForm() {
   popUpCard.classList.remove("popup_show");
+  document.removeEventListener("keydown", HandlerScapeClose);
 }
 
 function handleCardSubmit(evt) {
@@ -107,10 +108,13 @@ function handleOpenImage(title, link) {
   popUpTitle.textContent = title;
   popUpPicture.src = link;
   popUpImage.classList.add("popup_show");
+  document.addEventListener("keydown", HandlerScapeClose);
+  popUpImage.addEventListener("click", handleOverlayClick);
 }
 
 function handleCloseImage() {
   popUpImage.classList.remove("popup_show");
+  document.removeEventListener("keydown", HandlerScapeClose);
 }
 
 //generar cartas nuevas

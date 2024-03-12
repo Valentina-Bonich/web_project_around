@@ -55,33 +55,27 @@
             id="close-profile-form"
           />
           <h2 class="form__title">Edit profile</h2>
-          <span class="form__error_visible input-name-error"
-            >Por favor, rellena este campo</span
-          >
+
           <input
-            class="form__input form__input_type_error"
+            class="form__input"
             type="text"
             id="input-name"
             required
             minlength="2"
             maxlength="40"
           />
-          <span class="form__error_visible input-about-error"
-            >Por favor, rellena este campo</span
-          >
+          <span class="input-name-error"></span>
+
           <input
-            class="form__input form__input_type_error"
+            class="form__input"
             type="text"
             id="input-about"
             required
             minlength="2"
             maxlength="200"
           />
-          <button
-            class="form__button form__button_disabled"
-            type="submit"
-            id="profile-form-button"
-          >
+          <span class="input-about-error"></span>
+          <button class="form__button" type="submit" id="profile-form-button">
             Save
           </button>
         </form>
@@ -98,7 +92,7 @@
           <h2 class="form__title">Nuevo Lugar</h2>
 
           <input
-            class="form__input form__input_type_error"
+            class="form__input"
             type="text"
             id="input-title"
             placeholder="Title"
@@ -106,32 +100,18 @@
             minlength="2"
             maxlength="30"
           />
-
-          <img
-            class="form__line"
-            src="images/Line-2.png"
-            alt="linea divisoria"
-          />
-          <span class="form__error_visible input-title-error"></span>
+          <span class="input-title-error"></span>
 
           <input
-            class="form__input form__input_type_error"
+            class="form__input"
             type="text"
             id="input-url"
             placeholder="image URL"
             required
           />
-          <img
-            class="form__line"
-            src="images/Line-2.png"
-            alt="linea divisoria"
-          />
-          <span class="form__error_visible input-url-error"></span>
-          <button
-            class="form__button form__button_disabled"
-            type="submit"
-            id="addcard-form-button"
-          >
+
+          <span class="input-url-error"></span>
+          <button class="form__button" type="submit" id="addcard-form-button">
             Crear
           </button>
         </form>

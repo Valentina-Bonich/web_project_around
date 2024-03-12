@@ -5,26 +5,7 @@
   border-radius: 10px 10px 10px 10px;
   position: relative;
 }
-.form__button {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  text-align: center;
-  color: white;
-  background-color: black;
-  width: 358px;
-  height: 50.15px;
-  border-radius: 2px;
-  margin: 80px 0 0 40px;
-}
-.form__close-button {
-  position: absolute;
-  color: #ffffff;
-  cursor: pointer;
-  top: -50px;
-  right: -50px;
-}
+
 .form__input {
   font-family: Inter;
   font-size: 14px;
@@ -58,8 +39,36 @@
   margin-left: 40px;
 }
 
+.form__close-button {
+  position: absolute;
+  color: #ffffff;
+  cursor: pointer;
+  top: -50px;
+  right: -50px;
+}
+
+.form__button {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 358px;
+  height: 50.15px;
+  border-radius: 2px;
+  margin: 80px 0 0 40px;
+}
+
+.form__button:hover {
+  opacity: 0.6;
+}
+
 .form__button_disabled {
-  color: transparent;
+  background-color: white;
+  color: #cccccc;
+  pointer-events: none;
 }
 
 .form__input_type_error {
