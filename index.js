@@ -127,6 +127,8 @@ function CardGenerator(title, link) {
 
   cardImage.src = link;
   cardTitle.textContent = title;
+  cardImage.alt = title;
+
   likeButton.addEventListener("click", function () {
     likeButton.classList.toggle("element__photo-heart_active");
   });
