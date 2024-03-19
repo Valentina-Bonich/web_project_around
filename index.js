@@ -1,3 +1,5 @@
+import { Card } from "./Card.js";
+
 const popUpProfile = document.querySelector("#popup-profile");
 const btnProfile = document.querySelector(".profile__button");
 const btnCloseProfile = document.querySelector("#close-profile-form");
@@ -118,28 +120,28 @@ function handleCloseImage() {
 }
 
 //generar cartas nuevas
-function CardGenerator(title, link) {
-  const card = templateCard.cloneNode(true).content.querySelector(".element");
-  const cardImage = card.querySelector(".element__photo");
-  const cardTitle = card.querySelector(".element__photo-name");
-  const likeButton = card.querySelector(".element__photo-heart");
-  const btnRemoveCard = card.querySelector(".element__photo-trash");
+//function CardGenerator(title, link) {
+//const card = templateCard.cloneNode(true).content.querySelector(".element");
+//const cardImage = card.querySelector(".element__photo");
+//const cardTitle = card.querySelector(".element__photo-name");
+//const likeButton = card.querySelector(".element__photo-heart");
+//const btnRemoveCard = card.querySelector(".element__photo-trash");
 
-  cardImage.src = link;
-  cardTitle.textContent = title;
-  cardImage.alt = title;
+//cardImage.src = link;
+//cardTitle.textContent = title;
+//cardImage.alt = title;
 
-  likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("element__photo-heart_active");
-  });
-  btnRemoveCard.addEventListener("click", function () {
-    card.remove();
-  });
-  cardImage.addEventListener("click", function () {
-    handleOpenImage(title, link);
-  });
-  return card;
-}
+//likeButton.addEventListener("click", function () {
+//  likeButton.classList.toggle("element__photo-heart_active");
+//});
+//btnRemoveCard.addEventListener("click", function () {
+//card.remove();
+//});
+//cardImage.addEventListener("click", function () {
+//handleOpenImage(title, link);
+//});
+// return card;
+//}
 
 //eventos
 btnProfile.addEventListener("click", handleOpenProfileForm);
@@ -153,6 +155,6 @@ formCard.addEventListener("submit", handleCardSubmit);
 btnCloseImage.addEventListener("click", handleCloseImage);
 
 initialCards.forEach(function (element) {
-  const newCard = CardGenerator(element.name, element.link);
-  cardArea.append(newCard);
+  const newCard = new Card(element.name, element.link);
+  cardArea.append(newCard.generateCard);
 });
