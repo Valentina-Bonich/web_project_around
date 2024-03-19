@@ -1,4 +1,4 @@
-import { form Validator } from "./FormValidator.js";
+import { formValidator } from "./FormValidator.js";
 
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -70,6 +70,7 @@ const enableValidation = (settings) => {
   });
 };
 
+//settings
 enableValidation({
   formSelector: ".popup__form",
   inputSelector: ".form__input",
