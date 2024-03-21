@@ -21,7 +21,7 @@ export class FormValidator {
   inputElement.classList.add(this.inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(this.errorClass);
-  };
+  }
 
   _hideInputError(inputElement) {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -42,7 +42,7 @@ export class FormValidator {
     return inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
-  }
+  };
 
 
 _toggleButtonState() {
@@ -57,8 +57,9 @@ _setEventListeners() {
   this.formElement.addEventListener("submit", (evt) => {
     evt.preventDefault();
   });
+
   this._checkInputValidity();
-this._toggleButtonState();
+  this._toggleButtonState();
 }
 
 

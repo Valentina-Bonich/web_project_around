@@ -18,9 +18,10 @@ export class Card {
     document.addEventListener("keydown", HandlerScapeClose);
     popUpImage.addEventListener("click", handleOverlayClick);
   }
-
-  _setCardProperties() {
+  _getCardClone() {
     this.card = templateCard.cloneNode(true).content.querySelector(".element");
+  }
+  _setCardProperties() {
     this.cardTitle = this.card.querySelector(".element__photo-name");
     this.cardLink = this.card.querySelector(".element__photo");
     this.likeBtn = this.card.querySelector(".element__photo-heart");
@@ -44,6 +45,7 @@ export class Card {
   }
 
   generateCard() {
+    this._getCardClone();
     this._setCardProperties();
     this.setEventListeners();
     return this.card;
