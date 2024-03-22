@@ -1,5 +1,17 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
+import {
+  handleOverlayClick,
+  handlerScapeClose,
+  handleOpenProfileForm,
+  handleCloseProfileForm,
+  handleProfileSubmit,
+  handleOpenCardForm,
+  handleCloseCardForm,
+  handleCardSubmit,
+  handleOpenImage,
+  handleCloseImage,
+} from "./utils.js";
 
 const popUpProfile = document.querySelector("#popup-profile");
 const btnProfile = document.querySelector(".profile__button");
@@ -88,10 +100,22 @@ formCard.addEventListener("submit", handleCardSubmit);
 
 btnCloseImage.addEventListener("click", handleCloseImage);
 
+//instancias de clases para cada tarjeta y para formularios
 initialCards.forEach(function (element) {
-  const newCard = new Card(element.name, element.link);
-  cardArea.append(newCard.generateCard);
+  const newCard = new Card(element.name, element.link, templateCard);
+  cardArea.append(newCard.generateCard());
 });
+const settings = {
+  formSelector: ".popup__form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__error_visible",
+};
 
-const validateForm = new FormValidator(formElement, settings);
-validateForm.enableValidation();
+const formProfileValidate = new FormValidator(formProfile, settings);
+formProfileValidate.enableValidation();
+
+const formAddCardValidate = new FormValidator(formCard, settings);
+formAddCardValidate.enableValidation();

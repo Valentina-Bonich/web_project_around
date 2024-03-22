@@ -19,7 +19,7 @@ export class Card {
     popUpImage.addEventListener("click", handleOverlayClick);
   }
   _getCardClone() {
-    this.card = templateCard.cloneNode(true).content.querySelector(".element");
+    this.card = this.template.cloneNode(true).content.querySelector(".element");
   }
   _setCardProperties() {
     this.cardTitle = this.card.querySelector(".element__photo-name");
@@ -39,7 +39,7 @@ export class Card {
     this.likeBtn.addEventListener("click", () => {
       this._handleButtonStatus();
     });
-    this.cardImage.addEventListener("click", () => {
+    this.cardLink.addEventListener("click", () => {
       this._handleOpenImage(title, link);
     });
   }
