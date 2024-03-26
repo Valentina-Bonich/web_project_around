@@ -8,7 +8,6 @@ import {
   handleProfileSubmit,
   handleOpenCardForm,
   handleCloseCardForm,
-  handleCardSubmit,
   handleOpenImage,
   handleCloseImage,
 } from "./utils.js";
@@ -88,7 +87,16 @@ const initialCards = [
 //});
 // return card;
 //}
-
+function handleCardSubmit(evt) {
+  evt.preventDefault();
+  const newCard = new Card(
+    inputCardTitle.value,
+    inputCardLink.value,
+    templateCard
+  );
+  cardArea.prepend(newCard.generateCard());
+  handleCloseCardForm();
+}
 //eventos
 btnProfile.addEventListener("click", handleOpenProfileForm);
 btnCloseProfile.addEventListener("click", handleCloseProfileForm);

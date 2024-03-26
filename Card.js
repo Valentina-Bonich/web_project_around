@@ -12,8 +12,9 @@ export class Card {
     this.likeBtn.classList.toggle("element__photo-heart_active");
   }
   _handleOpenImage() {
-    popUpTitle.textContent = title;
-    popUpPicture.src = link;
+    const popUpImage = document.querySelector("#popup-image");
+    popUpTitle.textContent = this.title;
+    popUpPicture.src = this.link;
     popUpImage.classList.add("popup_show");
     document.addEventListener("keydown", HandlerScapeClose);
     popUpImage.addEventListener("click", handleOverlayClick);
@@ -22,13 +23,14 @@ export class Card {
     this.card = this.template.cloneNode(true).content.querySelector(".element");
   }
   _setCardProperties() {
+    console.log(this.link);
     this.cardTitle = this.card.querySelector(".element__photo-name");
     this.cardLink = this.card.querySelector(".element__photo");
     this.likeBtn = this.card.querySelector(".element__photo-heart");
     this.btnRemoveCard = this.card.querySelector(".element__photo-trash");
 
     this.cardTitle.textContent = this.title;
-    this.cardLink.src = `https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/${this.number}.jpg`;
+    this.cardLink.src = this.link;
     this.cardLink.alt = this.title;
   }
 
@@ -40,7 +42,7 @@ export class Card {
       this._handleButtonStatus();
     });
     this.cardLink.addEventListener("click", () => {
-      this._handleOpenImage(title, link);
+      this._handleOpenImage();
     });
   }
 
