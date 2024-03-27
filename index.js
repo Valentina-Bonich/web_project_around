@@ -8,7 +8,6 @@ import {
   handleProfileSubmit,
   handleOpenCardForm,
   handleCloseCardForm,
-  handleOpenImage,
   handleCloseImage,
 } from "./utils.js";
 
@@ -64,29 +63,15 @@ const initialCards = [
   },
 ];
 
-//generar cartas nuevas
-//function CardGenerator(title, link) {
-//const card = templateCard.cloneNode(true).content.querySelector(".element");
-//const cardImage = card.querySelector(".element__photo");
-//const cardTitle = card.querySelector(".element__photo-name");
-//const likeButton = card.querySelector(".element__photo-heart");
-//const btnRemoveCard = card.querySelector(".element__photo-trash");
+function handleOpenImage() {
+  const popUpImage = document.querySelector("#popup-image");
+  popUpTitle.textContent = this.title;
+  popUpPicture.src = this.link;
+  popUpImage.classList.add("popup_show");
+  document.addEventListener("keydown", handlerScapeClose);
+  popUpImage.addEventListener("click", handleOverlayClick);
+}
 
-//cardImage.src = link;
-//cardTitle.textContent = title;
-//cardImage.alt = title;
-
-//likeButton.addEventListener("click", function () {
-//  likeButton.classList.toggle("element__photo-heart_active");
-//});
-//btnRemoveCard.addEventListener("click", function () {
-//card.remove();
-//});
-//cardImage.addEventListener("click", function () {
-//handleOpenImage(title, link);
-//});
-// return card;
-//}
 function handleCardSubmit(evt) {
   evt.preventDefault();
   const newCard = new Card(
