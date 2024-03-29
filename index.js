@@ -63,10 +63,10 @@ const initialCards = [
   },
 ];
 
-function handleOpenImage() {
+function handleOpenImage(title, link) {
   const popUpImage = document.querySelector("#popup-image");
-  popUpTitle.textContent = this.title;
-  popUpPicture.src = this.link;
+  popUpTitle.textContent = title;
+  popUpPicture.src = link;
   popUpImage.classList.add("popup_show");
   document.addEventListener("keydown", handlerScapeClose);
   popUpImage.addEventListener("click", handleOverlayClick);
@@ -77,7 +77,8 @@ function handleCardSubmit(evt) {
   const newCard = new Card(
     inputCardTitle.value,
     inputCardLink.value,
-    templateCard
+    templateCard,
+    handleOpenImage
   );
   cardArea.prepend(newCard.generateCard());
   handleCloseCardForm();
@@ -95,7 +96,12 @@ btnCloseImage.addEventListener("click", handleCloseImage);
 
 //instancias de clases para cada tarjeta y para formularios
 initialCards.forEach(function (element) {
-  const newCard = new Card(element.name, element.link, templateCard);
+  const newCard = new Card(
+    element.name,
+    element.link,
+    templateCard,
+    handleOpenImage
+  );
   cardArea.append(newCard.generateCard());
 });
 const settings = {

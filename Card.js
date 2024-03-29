@@ -3,7 +3,7 @@ export class Card {
     this.title = title;
     this.link = link;
     this.template = template;
-    this.handleOpenImage = handleOpenImage;
+    this._handleOpenImage = handleOpenImage;
   }
 
   _handleRemoveCard() {
@@ -36,7 +36,7 @@ export class Card {
       this._handleButtonStatus();
     });
     this.cardLink.addEventListener("click", () => {
-      this.handleOpenImage();
+      this._handleOpenImage(this.title, this.link);
     });
   }
 

@@ -16,4 +16,4 @@ Metodología BEM para organizar la estructura de la página, sus bloques, elemen
 Javascript como lenguaje de programación que me permite darle interactividad y lógica a la página web.
 
 El proyecto se puede visualizar vía online en el sitio de GitHub Pages:
-https://github.com/Valentina-Bonich/web_project_around
+https://valentina-bonich.github.io/web_project_around/
