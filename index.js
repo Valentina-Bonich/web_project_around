@@ -1,5 +1,8 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
+import { Section } from "./scripts/Section.js";
+import { Popup } from "./scripts/Popup.js";
+import { UserInfo } from "./scripts/UserInfo.js";
 import {
   handleOverlayClick,
   handlerScapeClose,
@@ -63,7 +66,23 @@ const initialCards = [
   },
 ];
 
-function handleOpenImage(title, link) {
+const sectionCard = new Section(
+  {
+    items: initialCards,
+    renderer: function (element) {
+      const newCard = new Card(
+        element.name,
+        element.link,
+        templateCard,
+        handleOpenImage
+      );
+      sectionCard.addItem(newCard.generateCard());
+    },
+  },
+  "elements"
+);
+
+function handleCardClick(title, link) {
   const popUpImage = document.querySelector("#popup-image");
   popUpTitle.textContent = title;
   popUpPicture.src = link;
@@ -78,9 +97,9 @@ function handleCardSubmit(evt) {
     inputCardTitle.value,
     inputCardLink.value,
     templateCard,
-    handleOpenImage
+    handleCardClick
   );
-  cardArea.prepend(newCard.generateCard());
+  sectionCard.addItem(newCard.generateCard());
   handleCloseCardForm();
 }
 //eventos
@@ -100,10 +119,11 @@ initialCards.forEach(function (element) {
     element.name,
     element.link,
     templateCard,
-    handleOpenImage
+    handleCardClick
   );
   cardArea.append(newCard.generateCard());
 });
+
 const settings = {
   formSelector: ".popup__form",
   inputSelector: ".form__input",
