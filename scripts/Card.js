@@ -10,7 +10,7 @@ export class Card {
     this.card.remove();
   }
   _handleButtonStatus() {
-    this.likeBtn.classList.toggle("element__photo-heart_active");
+    this.likeBtn.classList.toggle(".element__photo-heart_active");
   }
 
   _getCardClone() {

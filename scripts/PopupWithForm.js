@@ -1,20 +1,18 @@
-import { Popup } from "./Popup";
+import { Popup } from "./Popup.js";
 
 export class PopupWithForm extends Popup {
-  constructor(handleFormSubmit, popupSeletor) {
-    super(PopupSelector);
+  constructor(handleFormSubmit, popupSelector) {
+    super(popupSelector);
     this.handleFormSubmit = handleFormSubmit;
+    this.formElement = this.popupElement.querySelector(".popup__form");
   }
   _getInputValues() {}
+
   setEventListeners() {
     super.setEventListeners();
-    super.popupElement.addEventListener("submit", (evt) => {
+    this.formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this.handleFormSubmit();
     });
   }
 }
-
-const addCardPopup = new PopupWithForm(() => {}, "#popup-add-card");
-
-addCardPopup.setEventListeners();

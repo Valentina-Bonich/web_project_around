@@ -1,7 +1,9 @@
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
+import { Card } from "./scripts/Card.js";
+import { FormValidator } from "./scripts/FormValidator.js";
 import { Section } from "./scripts/Section.js";
 import { Popup } from "./scripts/Popup.js";
+import { PopupWithForm } from "./scripts/PopupWithForm.js";
+import { PopupWithImage } from "./scripts/PopupWithImage.js";
 import { UserInfo } from "./scripts/UserInfo.js";
 import {
   handleOverlayClick,
@@ -74,7 +76,7 @@ const sectionCard = new Section(
         element.name,
         element.link,
         templateCard,
-        handleOpenImage
+        handleCardClick
       );
       sectionCard.addItem(newCard.generateCard());
     },
@@ -102,6 +104,7 @@ function handleCardSubmit(evt) {
   sectionCard.addItem(newCard.generateCard());
   handleCloseCardForm();
 }
+
 //eventos
 btnProfile.addEventListener("click", handleOpenProfileForm);
 btnCloseProfile.addEventListener("click", handleCloseProfileForm);
@@ -138,3 +141,16 @@ formProfileValidate.enableValidation();
 
 const formAddCardValidate = new FormValidator(formCard, settings);
 formAddCardValidate.enableValidation();
+
+const addCardPopup = new PopupWithForm(() => {
+  evt.preventDefault();
+  const newCard = new Card(
+    inputCardTitle.value,
+    inputCardLink.value,
+    templateCard,
+    handleCardClick
+  );
+  sectionCard.addItem(newCard.generateCard());
+}, "#popup-add-card");
+
+addCardPopup.setEventListeners();
